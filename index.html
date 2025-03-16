@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Food Spinner</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mystery Memory Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Random Food Spinner</h1>
-        <button id="spinButton">Spin</button>
-        <p id="result">Click the button to generate a meal!</p>
-    </div>
-    <div>
-      <button id="connectPlaid">Connect Bank Account</button>
-    </div>
-    <script src="script.js"></script>
-    <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+  <audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
+  <div class="container">
+    <h1>🕵️ Mystery Memory Game 🕵️</h1>
+    <div id="gameStage">
+      <p id="secretPhrase"></p>
+      <button onclick="memorized()">Memorized</button>
+    </div>
+    <div id="recallStage" style="display: none;">
+      <p>Enter the secret code:</p>
+      <input type="text" id="userInput" placeholder="Type the secret code...">
+      <button onclick="checkAnswer()">Submit</button>
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
